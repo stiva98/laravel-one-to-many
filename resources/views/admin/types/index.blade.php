@@ -31,11 +31,11 @@
                         <td>
                             {{ $type ->content }}
                         </td>
-                        {{-- <td>
-                            <a href="{{ route('admin.posts.show', ['post' => $post->id]) }}" class="btn btn-warning me-2">
-                                Singolo Post
+                        <td>
+                            <a href="{{ route('admin.types.show', ['type' => $type->id]) }}" class="btn btn-warning me-2">
+                                Singolo Type
                             </a>
-                            <a href="{{ route('admin.posts.edit', ['post' => $post->id]) }}" class="btn btn-success me-2">
+                            {{-- <a href="{{ route('admin.posts.edit', ['post' => $post->id]) }}" class="btn btn-success me-2">
                                 Modifica
                             </a>
                             <form action="{{ route('admin.posts.destroy', ['post' => $post->id]) }}" method="post" onsubmit="return confirm('Sei sicuro di voler eliminare il post?')">
@@ -44,8 +44,8 @@
                                 <button type="submit" class="btn btn-danger me-2">
                                     Elimina
                                 </button>
-                            </form>
-                        </td> --}}
+                            </form> --}}
+                        </td>
                     </tr>  
                     @endforeach
                 </tbody>
