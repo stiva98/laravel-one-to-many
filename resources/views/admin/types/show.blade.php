@@ -29,4 +29,20 @@
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col bg-light">
+            <h2>
+                Post collegati
+            </h2>
+            <ul>
+                @foreach ($type->posts as $post)
+                    <li>
+                        <a href="{{ route('admin.posts.show', ['post' => $post->id]) }}">
+                            {{ $post->title }}
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
+        </div>
+    </div>
 @endsection

@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Type;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Schema;
 
 class TypeSeeder extends Seeder
 {
@@ -13,7 +14,9 @@ class TypeSeeder extends Seeder
      */
     public function run(): void
     {
-        Type::truncate();
+        Schema::withoutForeignKeyConstraints(function () {
+            Type::truncate();
+        });
     
         for ($i=0; $i < 30 ; $i++) { 
             $title = substr(fake()->sentence(), 0, 64);

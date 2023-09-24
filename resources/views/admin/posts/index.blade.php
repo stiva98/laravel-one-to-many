@@ -17,6 +17,7 @@
                         <th scope="col">Title</th>
                         <th scope="col">Slug</th>
                         <th scope="col">Content</th>
+                        <th scope="col">Type</th>
                         <th scope="col">Actions</th>
                     </tr>
                 </thead>
@@ -34,6 +35,13 @@
                         </td>
                         <td>
                             {{ $post ->content }}
+                        </td>
+                        <td>
+                            @if ($post->type)
+                                    <a href="{{ route('admin.types.show',['type'=>$post->type->id]) }}">{{ $post->type->title }}</a>
+                            @else
+                                -
+                            @endif
                         </td>
                         <td>
                             <a href="{{ route('admin.posts.show', ['post' => $post->id]) }}" class="btn btn-warning me-2">
