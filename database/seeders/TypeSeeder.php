@@ -16,7 +16,7 @@ class TypeSeeder extends Seeder
         Type::truncate();
     
         for ($i=0; $i < 30 ; $i++) { 
-            $title = substr(fake()->sentence(), 0, 255);
+            $title = substr(fake()->sentence(), 0, 64);
             
             $type = new Type();
             $type->title = $title;

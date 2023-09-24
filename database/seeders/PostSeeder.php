@@ -18,7 +18,7 @@ class PostSeeder extends Seeder
         Post::truncate();
         
         for ($i=0; $i < 30 ; $i++) { 
-            $title = substr(fake()->sentence(), 0, 255);
+            $title = substr(fake()->sentence(), 0, 64);
             
             $post = new Post();
             $post->title = $title;
