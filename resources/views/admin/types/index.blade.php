@@ -35,10 +35,10 @@
                             <a href="{{ route('admin.types.show', ['type' => $type->id]) }}" class="btn btn-warning me-2">
                                 Singolo Type
                             </a>
-                            {{-- <a href="{{ route('admin.posts.edit', ['post' => $post->id]) }}" class="btn btn-success me-2">
+                            <a href="{{ route('admin.types.edit', ['type' => $type->id]) }}" class="btn btn-success me-2">
                                 Modifica
                             </a>
-                            <form action="{{ route('admin.posts.destroy', ['post' => $post->id]) }}" method="post" onsubmit="return confirm('Sei sicuro di voler eliminare il post?')">
+                            {{-- <form action="{{ route('admin.posts.destroy', ['post' => $post->id]) }}" method="post" onsubmit="return confirm('Sei sicuro di voler eliminare il post?')">
                             @csrf
                             @method('DELETE')
                                 <button type="submit" class="btn btn-danger me-2">
