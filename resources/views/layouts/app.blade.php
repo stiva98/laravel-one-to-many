@@ -26,9 +26,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('admin.posts.index') }}">Posts</a>
                             </li>
-                            {{-- <li class="nav-item">
-                                <a class="nav-link" href="#">Link 3</a>
-                            </li> --}}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.types.index') }}">Types</a>
+                            </li>
                         </ul>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf

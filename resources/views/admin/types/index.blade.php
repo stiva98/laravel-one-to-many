@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('page-title', 'Dashboard')
+@section('page-title', 'Types')
 
 @section('main-content')
     <div class="row">
         <div class="col-12 mb-4">
-            <a href="{{ route('admin.posts.create') }}" class="btn btn-warning w-100 mb-3">
+            <a href="{{ route('admin.types.create') }}" class="btn btn-warning w-100 mb-3">
                 + Aggiungi
             </a>
         </div>
@@ -15,27 +15,23 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Title</th>
-                        <th scope="col">Slug</th>
                         <th scope="col">Content</th>
                         <th scope="col">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($posts as $post)
+                    @foreach ($types as $type)
                     <tr>
                         <th scope="row">
-                        {{ $post ->id }}
+                        {{ $type ->id }}
                         </th>
                         <td>
-                            {{ $post ->title }}
+                            {{ $type ->title }}
                         </td>
                         <td>
-                            {{ $post ->slug }}
+                            {{ $type ->content }}
                         </td>
-                        <td>
-                            {{ $post ->content }}
-                        </td>
-                        <td>
+                        {{-- <td>
                             <a href="{{ route('admin.posts.show', ['post' => $post->id]) }}" class="btn btn-warning me-2">
                                 Singolo Post
                             </a>
@@ -45,11 +41,11 @@
                             <form action="{{ route('admin.posts.destroy', ['post' => $post->id]) }}" method="post" onsubmit="return confirm('Sei sicuro di voler eliminare il post?')">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger me-2">
-                                Elimina
-                            </button>
+                                <button type="submit" class="btn btn-danger me-2">
+                                    Elimina
+                                </button>
                             </form>
-                        </td>
+                        </td> --}}
                     </tr>  
                     @endforeach
                 </tbody>
