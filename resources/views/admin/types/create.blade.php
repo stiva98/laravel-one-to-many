@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('page-title', 'Crea il nuovo Post')
+@section('page-title', 'Crea il nuovo Type')
 
 
 @section('main-content')
@@ -8,13 +8,13 @@
     <div class="row">
         <div class="col">
             <h1>
-                Crea il tuo nuovo Post
+                Crea il tuo nuovo Type
             </h1>
         </div>
     </div>
     <div class="row">
         <div class="col-12">
-            <form action="{{ route('admin.posts.store') }}" method="POST">
+            <form action="{{ route('admin.types.store') }}" method="POST">
                 @csrf
 
                 <div class="mb-3">
@@ -22,15 +22,6 @@
                     <input type="text" max-lenght="64" class="form-control @error ('title') is invalid @enderror" id="title" name="title" placeholder="Inserisci titolo..." required value="{{ old('title') }}">
                 </div>
                 @error('title')
-                    <div class="alert alert-danger my-2">
-                        {{ $message }}
-                    </div>
-                @enderror
-                <div class="mb-3">
-                    <label for="slug" class="form-label">Inserisci slag <strong class="color-strong">*</strong></label>
-                    <input type="text"  max-lengh="64" class="form-control @error ('slug') is invalid @enderror" id="slug" name="slug" placeholder="Inserisci slag..." required value="{{ old('slug') }}">
-                </div>
-                @error('slug')
                     <div class="alert alert-danger my-2">
                         {{ $message }}
                     </div>

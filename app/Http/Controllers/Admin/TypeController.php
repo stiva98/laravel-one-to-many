@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Type;
-use App\Http\Requests\StoreTypeRequest;
-use App\Http\Requests\UpdateTypeRequest;
+use App\Http\Requests\Type\StoreTypeRequest;
+use App\Http\Requests\Type\UpdateTypeRequest;
 use App\Http\Controllers\Controller;
 
 class TypeController extends Controller
@@ -24,7 +24,7 @@ class TypeController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.types.create');
     }
 
     /**
@@ -32,7 +32,14 @@ class TypeController extends Controller
      */
     public function store(StoreTypeRequest $request)
     {
-        //
+        $formData = $request->all();
+
+        $type = new Type();
+        $type->title = $formData['title'];
+        $type->content = $formData['content'];
+        $type->save();
+
+        return redirect()->route('admin.types.index');
     }
 
     /**

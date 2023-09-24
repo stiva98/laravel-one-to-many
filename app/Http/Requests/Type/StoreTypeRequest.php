@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Type;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class StoreTypeRequest extends FormRequest
 {
@@ -11,7 +12,7 @@ class StoreTypeRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return Auth::check();
     }
 
     /**
@@ -22,7 +23,16 @@ class StoreTypeRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title' => 'required|max:64',
+            'content' => 'nullable',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'Inserire il titolo è obbligatorio!',
+            'title.max' => 'Inserire il titolo con massimo 64 caratteri!',
         ];
     }
 }
