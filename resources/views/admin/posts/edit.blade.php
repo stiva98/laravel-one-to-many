@@ -45,6 +45,22 @@
                         {{ $message }}
                     </div>
                 @enderror
+                <div class="mb-3">
+                    <label for="type_id" class="form-label">Tipo</label>
+                    <select class="form-select" id="type_id" name="type_id">
+                        <option value="">Seleziona un tipo...</option>
+                        @foreach ($types as $type)
+                            <option
+                                value="{{ $type->id }}"
+                                @if (old('type_id', $post->type_id) == $type->id)
+                                    selected
+                                @endif
+                                >
+                                {{ $type->title }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
                 <div>
                     <button type="submit" class="btn btn-warning w-100">
                         + Aggiungi

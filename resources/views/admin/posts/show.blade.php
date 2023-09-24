@@ -27,6 +27,9 @@
                         <div>
                             Content: <strong>{{ $post->content }}</strong>
                         </div>
+                        <div>
+                            Type: <strong>{{ $post->type->title }}</strong>
+                        </div>
                     </p>
                 </div>
             </div>
